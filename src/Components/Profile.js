@@ -1,7 +1,7 @@
 import React from 'react';
-
+import {connect} from 'react-redux'
 const Profile = props => {
-
+console.log(props)
     return (
         <main className='profile'>
             <h1>{props.userReducer.user.username}</h1>
@@ -10,5 +10,5 @@ const Profile = props => {
         </main>
     )
 }
-
-export default Profile;
+const mapStateToProps = reduxState => reduxState
+export default connect(mapStateToProps)(Profile);
